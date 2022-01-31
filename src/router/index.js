@@ -1,11 +1,29 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
+import Main from "@/views/Main";
+import PostsPage from "@/views/PostsPage";
+import PostIdPage from "@/views/PostIdPage";
+import PostsPageWithStore from "@/views/PostsPageWithStore";
 
 const routes = [
   {
     path: "/",
-    name: "Home",
-    component: Home,
+    name: "Main",
+    component: Main,
+  },
+  {
+    path: "/posts",
+    name: "PostsPage",
+    component: PostsPage,
+  },
+  {
+    path: "/store",
+    name: "PostsPageWithStore",
+    component: PostsPageWithStore,
+  },
+  {
+    path: "/posts/:id",
+    name: "PostIdPage",
+    component: PostIdPage,
   },
   {
     path: "/about",
