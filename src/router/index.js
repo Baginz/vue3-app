@@ -3,6 +3,7 @@ import Main from "@/views/Main";
 import PostsPage from "@/views/PostsPage";
 import PostIdPage from "@/views/PostIdPage";
 import PostsPageWithStore from "@/views/PostsPageWithStore";
+import PostsPageCompositionAPI from "@/views/PostsPageCompositionAPI";
 
 const routes = [
   {
@@ -19,6 +20,11 @@ const routes = [
     path: "/store",
     name: "PostsPageWithStore",
     component: PostsPageWithStore,
+  },
+  {
+    path: "/composition",
+    name: "PostsPageCompositionAPI",
+    component: PostsPageCompositionAPI,
   },
   {
     path: "/posts/:id",
