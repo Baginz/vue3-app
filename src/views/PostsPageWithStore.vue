@@ -1,6 +1,8 @@
 <template>
   <div class="container">
     <h1>Посты</h1>
+    <!--    {{ $store.state.post.limit}}-->
+    <!--    {{ $store.commit('post/setPosts', post) }}-->
     <my-input
       :model-value="searchQuery"
       @update:model-value="setSearchQuery"
@@ -57,6 +59,8 @@ export default {
   methods: {
     ...mapMutations({
       setPage: "post/setPage",
+      addPost: "post/addPost",
+      removePostPost: "post/removePost",
       setSearchQuery: "post/setSearchQuery",
       setSelectedSort: "post/setSelectedSort",
     }),
@@ -65,11 +69,11 @@ export default {
       fetchPosts: "post/fetchPosts",
     }),
     createPost(post) {
-      this.posts.push(post);
+      this.addPost(post);
       this.dialogVisible = false;
     },
     removePost(post) {
-      this.posts = this.posts.filter((p) => p.id !== post.id);
+      this.removePostPost(post);
     },
     showDialog() {
       this.dialogVisible = true;
