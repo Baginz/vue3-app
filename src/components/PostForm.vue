@@ -1,5 +1,5 @@
 <template>
-  <form @submit.prevent>
+  <div @submit.prevent >
     <h4>Создание пост</h4>
     <!--    <input v-bind:value="post.title" @input="post.title = $event.target.value" class="input" type="text"-->
     <!--           placeholder="Название">-->
@@ -7,7 +7,7 @@
     <my-input v-focus v-model="post.title" type="text" placeholder="Название" />
     <my-input v-model="post.body" type="text" placeholder="Описание" />
     <my-button @click="createPost">Создать</my-button>
-  </form>
+  </div>
 </template>
 
 <script>

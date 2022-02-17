@@ -1,6 +1,5 @@
 <template>
-  <!--  почему ошибка в модельвелью Unexpected mutation of "modelValue" prop.(vue/no-mutating-p-->
-  <select v-model="modelValue" @change="changeOption">
+  <select v-model="localMV" @change="changeOption">
     <option disabled value="">Выберите из списка</option>
     <option v-for="option in options" :key="option.value" :value="option.value">
       {{ option.name }}
@@ -11,6 +10,11 @@
 <script>
 export default {
   name: "my-select",
+  data(){
+    return {
+      localMV: this.modelValue
+    }
+  },
   props: {
     modelValue: {
       type: String,
